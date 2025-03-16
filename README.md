@@ -18,21 +18,6 @@
 
 ## 3. 백엔드
 
-#### 애플리케이션 목록
-
-
-
-
-
-
-
-
-
-- [회원 서비스](https://github.com/man-moon/member-service.git)  
-    메일 리마인더, 북마크, 회원관리
-- [공지사항 조회 서비스](https://github.com/man-moon/notice-view.git)  
-    공지사항 데이터 제공
-
 #### 설계 목표
 
 - 서비스 분리 및 장애 대응 강화  
@@ -90,6 +75,11 @@ OCR, 요약 등 외부 API를 사용하여 시간이 많이 걸리는 작업을 
 #### 아키텍처
 
 ![운영서버 아키텍처](https://private-user-images.githubusercontent.com/88218891/423134816-0e7c2fa3-6062-40d4-86b5-29b26b995074.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIwNTY1NDgsIm5iZiI6MTc0MjA1NjI0OCwicGF0aCI6Ii84ODIxODg5MS80MjMxMzQ4MTYtMGU3YzJmYTMtNjA2Mi00MGQ0LTg2YjUtMjliMjZiOTk1MDc0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE1VDE2MzA0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1ZDM4MzYxMzI3ZGMyMWRmYmYzNTE2ODcyYjA4MGMzZmU4Y2ZjYTgyNDk3YWJlMzc4N2Q1MmJjNzk0OTkyNzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.rTI_mwKRQbgNuVOOglcAjjg-F9X9kB8niUUNiXERp7A)
+
+- [회원 서비스](https://github.com/man-moon/member-service.git)  
+    메일 리마인더, 북마크, 회원관리
+- [공지사항 조회 서비스](https://github.com/man-moon/notice-view.git)  
+    공지사항 데이터 제공
 
 운영 서버는 API Gateway를 중심으로, 외부 요청을 Notice View Service와 Member Service로 분산 처리하는 구조를 채택. 각 서비스는 메시지 큐를 통해 다른 서비스와 통신.  
 마이크로서비스가 늘어나도 확장성을 유지하며, 서비스 간 의존성을 낮출 수 있도록 설계.
