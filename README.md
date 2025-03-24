@@ -60,7 +60,7 @@ OCR API, OpenAI API, 이미지 저장 등 긴 처리시간이 소요되는 파�
 OCR, 요약 등 외부 API를 사용하여 시간이 많이 걸리는 작업을 메시지 큐 기반 비동기로 분산 처리.
 
 #### CQRS와 CDC
-![CDC](https://private-user-images.githubusercontent.com/88218891/423136258-650bf6bd-3de8-44ac-88f7-5e076075af1d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIwNTY4NzIsIm5iZiI6MTc0MjA1NjU3MiwicGF0aCI6Ii84ODIxODg5MS80MjMxMzYyNTgtNjUwYmY2YmQtM2RlOC00NGFjLTg4ZjctNWUwNzYwNzVhZjFkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE1VDE2MzYxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk2Zjg3NjczMGM2NmY3YjU4MWNjYTljMWQ2YTYzMjEzNDMyYTBkMzRjMzI2MTA5YTc3YWU3NjNlODJlYjY2N2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Qau49M_tzHx96aWhcWlzUc9SyI6QRJtcXdSmuUT56v8)
+![CDC](https://github.com/user-attachments/assets/650bf6bd-3de8-44ac-88f7-5e076075af1d)
 
 1. **CQRS**  
     쓰기(Write) 작업은 트랜잭션 무결성이 중요한 Maria DB에서 수행하고, 읽기(Read) 작업은 빠른 조회가 가능한 MongoDB에서 처리하도록 분리. 대량의 쓰기·읽기 요청이 동시에 발생해도 각각의 DB가 전문화된 역할을 수행할 수 있어, 성능 저하와 DB 락 문제를 효과적으로 해결.
