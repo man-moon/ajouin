@@ -74,7 +74,7 @@ OCR, 요약 등 외부 API를 사용하여 시간이 많이 걸리는 작업을 
 
 #### 아키텍처
 
-![운영서버 아키텍처](https://private-user-images.githubusercontent.com/88218891/423134816-0e7c2fa3-6062-40d4-86b5-29b26b995074.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIwNTY1NDgsIm5iZiI6MTc0MjA1NjI0OCwicGF0aCI6Ii84ODIxODg5MS80MjMxMzQ4MTYtMGU3YzJmYTMtNjA2Mi00MGQ0LTg2YjUtMjliMjZiOTk1MDc0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE1VDE2MzA0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1ZDM4MzYxMzI3ZGMyMWRmYmYzNTE2ODcyYjA4MGMzZmU4Y2ZjYTgyNDk3YWJlMzc4N2Q1MmJjNzk0OTkyNzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.rTI_mwKRQbgNuVOOglcAjjg-F9X9kB8niUUNiXERp7A)
+![운영서버 아키텍처](https://github.com/user-attachments/assets/0e7c2fa3-6062-40d4-86b5-29b26b995074)
 
 - [회원 서비스](https://github.com/man-moon/member-service.git)  
     메일 리마인더, 북마크, 회원관리
