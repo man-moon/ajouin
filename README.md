@@ -39,7 +39,7 @@ OCR API, OpenAI API, 이미지 저장 등 긴 처리시간이 소요되는 파�
 ### 3-1. 데이터 파이프라인 백엔드
 
 #### 아키텍처
-![데이터 파이프라인 아키텍처](https://private-user-images.githubusercontent.com/88218891/423135390-50c015a6-0bca-4e2a-b26b-ec08880635bd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIwNTY2NzgsIm5iZiI6MTc0MjA1NjM3OCwicGF0aCI6Ii84ODIxODg5MS80MjMxMzUzOTAtNTBjMDE1YTYtMGJjYS00ZTJhLWIyNmItZWMwODg4MDYzNWJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE1VDE2MzI1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZiMDVjMTRkZDc1OWNhODRlOGU2ZjFlY2FmMjNmYjE0ODM1NDNmY2MyMmNiZGJhN2ZmMGMwOTNhY2MxMGFhOGMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.sF7GwUdtCdhvr2bQFE1sQ8yfM1YJIdrR4NA_sXJ5LVc)
+![데이터 파이프라인 아키텍처](https://github.com/user-attachments/assets/50c015a6-0bca-4e2a-b26b-ec08880635bd)
 
 - [공지사항 목록 스크래퍼(Notice list Scraper)](https://github.com/man-moon/notice-scraper.git)  
     10분 주기로 50개 이상의 교내 홈페이지에서 스크래핑 할 공지사항을 필터링하여 수집. 공지사항 리스트를 notice-req 메시지 큐에 전달
