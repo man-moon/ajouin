@@ -88,7 +88,7 @@ OCR, 요약 등 외부 API를 사용하여 시간이 많이 걸리는 작업을 
 
 #### 아키텍처
 
-![챗봇 아키텍처](https://private-user-images.githubusercontent.com/88218891/423192064-121fd24a-cf25-4fdd-873f-652fd225b967.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIxMDkxODEsIm5iZiI6MTc0MjEwODg4MSwicGF0aCI6Ii84ODIxODg5MS80MjMxOTIwNjQtMTIxZmQyNGEtY2YyNS00ZmRkLTg3M2YtNjUyZmQyMjViOTY3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE2VDA3MDgwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJlMjJhMzg1MDJkMGU3ZjcxNjgzNWE1M2JiMDAyOTJiYWY5YTQ0YTRhYjNiYjBjNzA0YjczYzUzN2M5MGQ1NmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.JX7g_6b4rIHPj5kRnbV8cx7HK1KsyoXhYUeFtQ9pQBs)
+![챗봇 아키텍처](https://github.com/user-attachments/assets/121fd24a-cf25-4fdd-873f-652fd225b967)
 
 챗봇은 학교 공지사항, 학사 정보, 위키 데이터(사용자 참여 데이터), 교내 웹사이트 크롤링 데이터 등을 활용하여 사용자의 질문에 실시간으로 답변. 기본적으로는 앞서 언급한 데이터로 학습된 교내 도메인 지식을 활용하는 내부 LLM 서버를 통해 정확한 응답을 제공. 대기열이 3 이상으로 증가하는 등 트래픽이 증가할 경우에는 OpenAI의 GPT-4 API로 전환. 이를 통해 서비스 안정성과 응답 속도를 동시에 확보하며 비용 역시 최소화 가능.
 
@@ -109,13 +109,13 @@ GPT-4 API 사용 시에는 Vector DB(PostgreSQL)와 LangChain을 통해 관련 �
 
 ### 5. 테스트 환경 및 Config 주입
 
-![환경설정 아키텍처](https://private-user-images.githubusercontent.com/88218891/423140510-55fbfbb3-125e-4cac-81d4-cd881474a2b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIwNTc5NDcsIm5iZiI6MTc0MjA1NzY0NywicGF0aCI6Ii84ODIxODg5MS80MjMxNDA1MTAtNTVmYmZiYjMtMTI1ZS00Y2FjLTgxZDQtY2Q4ODE0NzRhMmI3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE1VDE2NTQwN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY1MTU1OWI5YjFjMDRjNDE5MDlhNDlkMDYwNzBmZDQyZWE4ZWQwMjQ3YmJjN2UxZjc3Mjk2MDQ1ZDRlNjA4YmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.tY2Y__93U42JMvhcGQAKj_lnHS5Ew9hN7Kuw1zG0Hhw)
+![환경설정 아키텍처](https://github.com/user-attachments/assets/55fbfbb3-125e-4cac-81d4-cd881474a2b7)
 
 테스트 환경과 운영 환경을 분리하여, 테스트 통과 시 자동 배포가 이루어지도록 구성. 이를 위해 RabbitMQ(Spring Cloud Bus)와 Config Service를 연동하고, 각 환경별 설정 파일을 GitHub 저장소에서 관리. 테스트 환경에서는 MQ와 DB를 별도로 구성해 운영 리소스와의 충돌을 방지하고, CI/CD 파이프라인에서 모든 테스트가 성공해야만 운영 환경에 배포되도록 하여 안정성을 높임. 또한 Config Service를 통해 각 마이크로서비스가 실행 시점에 필요한 설정을 동적으로 주입받게 함으로써, 코드 수정 없이도 환경 전환이 가능하도록 설계.
 
 ### 6. CI/CD
 
-![CI/CD](https://private-user-images.githubusercontent.com/88218891/423144804-10cda196-81b9-4997-a7d3-36d87d372220.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIwNTkyMjEsIm5iZiI6MTc0MjA1ODkyMSwicGF0aCI6Ii84ODIxODg5MS80MjMxNDQ4MDQtMTBjZGExOTYtODFiOS00OTk3LWE3ZDMtMzZkODdkMzcyMjIwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE1VDE3MTUyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI4N2JhZGU4MzQ3ODc2N2FiMTQ2ODdhMzRlNjMyYzUwMDMyYWRhYmJlOGQ0ZTA3MmQ3YjYyNmMwNjYwMWEzNzAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.LfT01pmZHBkgJmAdf6wvO1QvrYso57GcSLyAsMDW5VY)
+![CI/CD](https://github.com/user-attachments/assets/10cda196-81b9-4997-a7d3-36d87d372220)
 
 Jenkins를 통해 GitHub에 코드가 푸시되는 순간 자동으로 빌드와 테스트가 수행되고, 통과시 배포되는 CI/CD 파이프라인. 각 서비스(Notice View, Member, OCR, Summary, Notice List Scraper, Notice Data Processing)는 독립적인 파이프라인을 사용.  
 배포 환경은 Docker 컨테이너 기반. Jenkins에서 SSH 연결을 통해 컨테이너를 배포함으로써 운영 서버로의 반영 과정을 자동화.
