@@ -17,11 +17,16 @@
 
 
 ## 3. 백엔드
-[공지사항 목록 스크래퍼(Notice list Scraper)](https://github.com/man-moon/notice-scraper.git)  
-[OCR 서비스(OCR Service)](https://github.com/man-moon/ocr-service.git) 
-[요약 서비스(Summary Service)](https://github.com/man-moon/summary-service.git)  
-[공지사항 데이터 프로세싱 서비스(Notice Date Processing Service)](https://github.com/man-moon/notice-content-scraper.git)  
+[공지사항 목록 스크래퍼(Notice list Scraper)](https://github.com/man-moon/notice-scraper.git)
+
+[OCR 서비스(OCR Service)](https://github.com/man-moon/ocr-service.git)
+
+[요약 서비스(Summary Service)](https://github.com/man-moon/summary-service.git)
+
+[공지사항 데이터 프로세싱 서비스(Notice Date Processing Service)](https://github.com/man-moon/notice-content-scraper.git)
+
 [회원 서비스](https://github.com/man-moon/member-service.git)
+
 [공지사항 조회 서비스](https://github.com/man-moon/notice-view.git)
 
 #### 설계 목표
